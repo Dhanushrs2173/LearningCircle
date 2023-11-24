@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Dice Roller</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    #dice-roll {
+      font-size: 24px;
+      margin: 20px;
+      padding: 10px;
+      border: 2px solid #333;
+      display: inline-block;
+      cursor: pointer;
+    }
+    #results {
+        background-color: #333;
+        color:white;
+
+    font-size: x-large;
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      transition: transform 2s ease-in-out;
+      transform-origin: center;
+      width:100px;
+      height:100px;
+      border:2px solid black;
+
+    }
+    #results.rotate {
+      font-size:x-large;
+      transform: rotate(360deg);
+    }
+  </style>
+</head>
+<body>
+  <h1>Random Dice Roller</h1>
+  <div id="dice-roll">Click to Roll</div>
+  <div id="results"></div>
+
+  <script>
+    function rollDice() {
+      const result = Math.floor(Math.random() * 6) + 1;
+      return result;
+    }
+
+    const numRolls =1;
+    const resultsContainer = document.getElementById('results');
+    const rollButton = document.getElementById('dice-roll');
+
+    rollButton.addEventListener('click', function() {
+      resultsContainer.innerHTML = '';
+
+      
+      resultsContainer.classList.add('rotate');
+       
+      setTimeout(() => {
+        for (let i = 1; i <= numRolls; i++) {
+          const rollResult = rollDice();
+          const resultElement = document.createElement('p');
+          resultElement.textContent = `${rollResult}`;
+          resultsContainer.appendChild(resultElement);
+        }
+
+      
+        resultsContainer.classList.remove('rotate');
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

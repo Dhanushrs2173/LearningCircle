@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Addition Calculator</title>
+  <style>
+    body {
+      padding:20px;
+      border: 5px solid white;
+      font-family: Arial, sans-serif;
+      height:100vh;
+      text-align: center;
+      background: linear-gradient(to right, #3f5d70, #ffffff);
+    }
+    h1 {
+      color: #333;
+      background: linear-gradient(to bottom, #3f5d70, #ffffff);
+      border-bottom: 1px solid white;
+    }
+    #calculator {
+
+      background: linear-gradient(to right, #3f5d70, #ffffff);
+      margin: 20px;
+      padding: 20px;
+      border: 2px solid white;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple Addition Calculator</h1>
+  <div id="calculator">
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1"><br>
+
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2"><br>
+
+    <button onclick="calculateSum()">Calculate Sum</button>
+
+    <p>Sum: <span id="result">0</span></p>
+  </div>
+
+  <script>
+    function calculateSum() {
+      const num1 = parseFloat(document.getElementById('num1').value);
+      const num2 = parseFloat(document.getElementById('num2').value);
+      const sum = num1 + num2;
+      document.getElementById('result').textContent = sum;
+    }
+  </script>
+</body>
+</html>

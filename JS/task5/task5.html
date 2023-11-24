@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Persons Information</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f4f4f4;
+    }
+
+    #persons-container {
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+    }
+
+    .person {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      text-align: left;
+      overflow: hidden;
+    }
+
+    .info-box {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="persons-container">
+    <h2>Persons Information</h2>
+    <div id="persons-list"></div>
+  </div>
+
+  <script>
+    fetch('persons.json')
+      .then(response => response.json())
+      .then(persons => {
+        const personsList = document.getElementById('persons-list');
+        
+        persons.forEach(person => {
+          const personDiv = document.createElement('div');
+          personDiv.classList.add('person');
+
+          const nameBox = createInfoBox('Name', person.name);
+          const ageBox = createInfoBox('Age', person.age);
+          const placeBox = createInfoBox('Place', person.place);
+          const dobBox = createInfoBox('DOB', person.dob);
+
+          personDiv.appendChild(nameBox);
+          personDiv.appendChild(ageBox);
+          personDiv.appendChild(placeBox);
+          personDiv.appendChild(dobBox);
+
+          personsList.appendChild(personDiv);
+        });
+      })
+      .catch(error => console.error('Error fetching JSON:', error));
+
+    function createInfoBox(label, value) {
+      const infoBox = document.createElement('div');
+      infoBox.classList.add('info-box');
+      infoBox.innerHTML = `<strong>${label}:</strong> ${value}`;
+      return infoBox;
+    }
+  </script>
+</body>
+</html>
+
+
+
+
