@@ -1,0 +1,49 @@
+.header{
+    background-color: rgba(87, 89, 90, 0.726);
+    padding:1%;
+    display:flex;
+    justify-content: center;
+}
+
+
+.title{
+    display:flex;
+    justify-content: space-around;
+    padding:5px;
+    color:white;
+    width:fit-content;
+    margin-left:5%;
+}
+
+.header img{
+    border:3px solid white;
+    border-radius: 50%;
+}
+.name{
+    padding:3%;
+    
+}
+.name h1 {
+    color:white;
+    justify-content: center;
+    border-bottom: 2px solid white;
+    width:300px;
+
+}
+.name p {
+    margin-top:-5%;
+    color:rgb(255, 253, 253);
+    background-color: #706d6d6c;
+    width:fit-content;
+    padding:3px;
+    justify-content: center;
+}
+.skills-list {
+    background-color: rgba(87, 89, 90, 0.726);
+
+    list-style: none;
+    padding: 0;
+}
+.skills-list li {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhanush R S</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        body {
+            display:flex;
+            justify-content: center;
+            overflow:auto;
+            font-family: 'Arial', sans-serif;
+            padding-top: 56px; 
+            background: linear-gradient(to right, #3f5d70, #ffffff);
+           }
+
+        header {
+            background-color: #445a70;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            background: linear-gradient(to left, #3498db, #2c3e50);
+        }
+
+        header img {
+            border: 3px solid white;
+            border-radius: 50%;
+            max-width: 100px;
+            height: auto;
+        }
+
+        .intro {
+            font-size: 1.2em;
+        }
+
+        .navbar {
+           
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            
+        }
+
+        .navbar-dark .navbar-toggler-icon {
+            background-color: #16191d;
+        }
+
+        .navbar-nav a {
+            color: #a39c9c;
+        }
+
+        .navbar-nav a:hover {
+            color: #ddd;
+        }
+
+        .navbar-collapse {
+            max-width: 200px;
+        }
+
+        .section {
+            margin-top:5%;
+            padding: 5%;
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+         #home{
+            display:inline-block;
+         }
+
+         /*img gallery */
+          #gallery {
+            width:fit-content;
+            border:3px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    #mainImage {
+        
+      max-width: 100%;
+      max-height: 300px;
+      
+    }
+
+    .thumbnail {
+        
+        border:2px solid white;
+        max-width: 10%;
+      max-height: 40px;
+      margin: 0 10px;
+
+      cursor: pointer;
+    }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        #logo{
+            margin-right:10px;
+            border: 3px solid white;
+            border-radius: 50%;
+            width:50px;
+
+        }
+        .section-content {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.671);
+}
+
+.section-content h1, h2 {
+    color: #333;
+}
+
+.section-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.section-content h1 {
+    margin-bottom: 20px;
+}
+
+.section-content h2 {
+    margin-top: 20px;
+}
+.contact-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section h2 {
+    color: #333;
+}
+
+.contact-section p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        iframe {
+            margin-top:5%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <a class="navbar-brand" href="#" onclick="showSection('home')"><img id="logo" src="./Assets/myself.jpg">Dhanush R S</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('home')">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('about-me')">About Me</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('portfolio')">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('resume')">Resume</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('contact')">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('blog')">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('skills')">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('services')">Services</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Homepage -->
+    <section id="home" class="section">
+        <header>
+            <img alt="Dhanush" title="Dhanush" src="./Assets/myself.jpg">
+            <h1>Dhanush R S</h1>
+            <p class="intro">Passionate frontend developer crafting exceptional user experiences.</p>
+        </header>
+        
+        <div class="intro">
+            <div id="gallery">
+    <img id="mainImage" src="./Assets/img4.jpg" alt="Main Image">
+  </div>
+
+  <div id="thumbnails">
+    <img class="thumbnail" src="./Assets/img1.jpg" alt="Thumbnail 1" onclick="changeImage('./Assets/img1.jpg')">
+    <img class="thumbnail" src="./Assets/img2.jpg" alt="Thumbnail 2" onclick="changeImage('./Assets/img2.jpg')">
+    <img class="thumbnail" src="./Assets/img5.jpg" alt="Thumbnail 3" onclick="changeImage('./Assets/img5.jpg')">
+    
+  </div>
+        </div>
+    
+    </section>
+
+    <!-- About Me -->
+    <section id="about-me" class="section">
+        <div class="section-content">
+            
+    <h1>About Me</h1>
+    <p>Hello there! 👋 I'm Dhanush, a passionate third-year student pursuing a degree in Computer Science and Engineering from Marian Engineering College. With a love for both the logical intricacies of programming and the creative realm of design, I find myself at the exciting intersection of technology and aesthetics.</p>
+
+    <h2>Web Development Maestro:</h2>
+    <p>I speak the languages of the web fluently. From the dynamic duo of HTML and CSS to the JavaScript ecosystem, I craft seamless and visually appealing user experiences. React, Vue, and Angular are my playgrounds for building interactive and responsive interfaces, while Node.js ensures the server-side magic runs smoothly.</p>
+
+    <h2>Beyond the Web:</h2>
+    <p>But my expertise doesn't stop there. I'm well-versed in the foundations, having mastered languages like C, Java, and Python. Whether it's algorithmic problem-solving or developing robust applications, I bring a versatile skill set to the table.</p>
+
+    <h2>Design Maven:</h2>
+    <p>I believe that great code should be accompanied by great design. My aesthetic sensibilities and attention to detail shine through in every project. Whether it's creating a captivating user interface or optimizing the user experience, I understand the importance of a visually appealing and user-friendly design.</p>
+
+    <h2>Communication Aficionado:</h2>
+    <p>Effective communication is the backbone of successful development. I pride myself on my ability to translate technical jargon into layman's terms. I've honed my communication skills through collaborations, presentations, and conveying complex ideas in a simple, understandable manner.</p>
+
+    <h2>Always Learning:</h2>
+    <p>In the ever-evolving world of technology, I embrace the mindset of a perpetual learner. Staying updated with the latest trends and technologies is not just a habit; it's a commitment to delivering solutions that stand the test of time.</p>
+
+    <p>Join me on this exciting journey where technology meets creativity, and let's build something extraordinary together! 💻✨</p>
+
+
+           </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section">
+        <div class="section-content">
+            <h2>Portfolio</h2>
+            <div class="portfolio-item">
+                Nothing to show
+                </div>
+            
+        </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="section">
+        <div class="section-content">
+            <h2>Resume/CV</h2>
+            
+
+
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section id="contact" class="section">
+        <div class="section-content">
+                <h2>Contact Me</h2>
+                <p>Feel free to reach out through the following channels:</p>
+                
+                <ul class="social-icons">
+                    <li><a href="https://twitter.com/Dhanu200x" target="_blank"><img src="./Assets/twitter-icon.png" alt="Twitter"></a></li>
+                    <li><a href="https://www.linkedin.com/in/dhanush-r-s-7391bb228/" target="_blank"><img src="./Assets/linkedin-icon.png" alt="LinkedIn"></a></li>
+                    <li><a href="https://github.com/Dhanushrs2173" target="_blank"><img src="./Assets/github-icon.png" alt="GitHub"></a></li>
+                    <li><a href="https://medium.com/@dhanu200x" target="_blank"><img src="./Assets/medium-icon.png" alt="Medium"></a></li>
+                  
+                </ul>
+                
+                <p>You can also email me at <a href="mailto:dhanu200x@gmail.com">dhanu200x@gmail.com</a>.</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Blog/Articles -->
+    <section id="blog" class="section">
+        <div class="section-content">
+            <h2>Blog/Articles</h2>
+            <a href="https://htmlthebase.blogspot.com/">HTML Demystified: A Beginner's Guide to Building the Web.</a>
+            <iframe src="https://htmlthebase.blogspot.com/" width="600" height="600" frameborder="0" scrolling="no"></iframe>
+
+              </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+        <div class="section-content">
+            <h2>Skills</h2>
+            
+    <h2>Web Development Skills:</h2>
+    <ul>
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript (ES6+)</li>
+        <li>Responsive Web Design</li>
+        <li>Frontend Frameworks (e.g., React, Angular, Vue.js)</li>
+        <li>Backend Frameworks (e.g., Node.js, Django, Ruby on Rails)</li>
+        <li>RESTful APIs</li>
+        <li>Version Control (e.g., Git)</li>
+        <li>Web Performance Optimization</li>
+        <li>Cross-Browser Compatibility</li>
+    </ul>
+
+    <h2>Communication Skills:</h2>
+    <ul>
+        <li>Verbal Communication</li>
+        <li>Written Communication</li>
+        <li>Active Listening</li>
+        <li>Presentation Skills</li>
+        <li>Collaboration</li>
+        <li>Client Communication</li>
+        <li>Clear Articulation of Technical Concepts</li>
+        <li>Documentation</li>
+    </ul>
+    <h2>Design Skills:</h2>
+
+    <h3>Poster Design:</h3>
+    <ul>
+        <li>Graphic Design</li>
+        <li>Layout and Composition</li>
+        <li>Typography</li>
+        <li>Color Theory</li>
+        <li>Visual Hierarchy</li>
+        <li>Print Design</li>
+        <li>Adobe Creative Suite (Photoshop, Illustrator, InDesign)</li>
+    </ul>
+
+    <h3>Logo Design:</h3>
+    <ul>
+        <li>Branding</li>
+        <li>Conceptualization</li>
+        <li>Vector Graphics</li>
+        <li>Brand Identity</li>
+        <li>Scalability</li>
+        <li>Simplicity</li>
+    </ul>
+
+ </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+        <div class="section-content">
+            <h2>Services</h2>
+            <h2>Web Development Services:</h2>
+            <ul>
+                <li>Website Development using HTML5, CSS3, and JavaScript.</li>
+                <li>Responsive web design for optimal viewing on various devices.</li>
+                <li>Integration of Frontend Frameworks (React, Angular, Vue.js) for dynamic user interfaces.</li>
+                <li>Backend development using Node.js, Django, or Ruby on Rails.</li>
+                <li>Implementation of RESTful APIs for seamless communication.</li>
+                <li>Version control using Git and collaboration on coding projects.</li>
+                <li>Web performance optimization for faster loading times.</li>
+                <li>Testing and ensuring cross-browser compatibility.</li>
+            </ul>
+        </div>
+            <div class="section-content">
+            <h2>Communication Services:</h2>
+            <ul>
+                <li>Content creation and writing for websites or blogs.</li>
+                <li>Verbal communication for consultations or project discussions.</li>
+                <li>Active listening to understand client requirements.</li>
+                <li>Creation of visually appealing presentations for pitches or project proposals.</li>
+                <li>Effective collaboration with clients and team members.</li>
+                <li>Regular updates and communication on project progress.</li>
+                <li>Creation of detailed technical documentation for projects.</li>
+            </ul>
+            </div>
+            <div class="section-content">
+            <h2>Design Services:</h2>
+            <h3>Poster Design:</h3>
+            <ul>
+                <li>Custom graphic design for posters, banners, and promotional materials.</li>
+                <li>Crafting visually appealing layouts for various print or digital materials.</li>
+                <li>Selection and implementation of suitable typography for design projects.</li>
+                <li>Applying color theory principles for eye-catching designs.</li>
+                <li>Establishing a clear visual hierarchy in design elements.</li>
+                <li>Designing materials for print, such as brochures or business cards.</li>
+                <li>Utilizing tools like Photoshop, Illustrator, and InDesign for design projects.</li>
+            </ul>
+            </div>
+            <div class="section-content">
+            <h3>Logo Design:</h3>
+            <ul>
+                <li>Creating unique and memorable brand identities.</li>
+                <li>Conceptualizing brand elements that represent the client's vision.</li>
+                <li>Designing logos as vector graphics for scalability and versatility.</li>
+                <li>Emphasizing simplicity in logo design for clarity and recognition.</li>
+            </ul>
+         </div>
+    </section>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+           var sections = document.getElementsByClassName('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+
+            // Show the selected section
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+
+            // Collapse the menu
+            var navbarToggler = document.querySelector('.navbar-toggler');
+            var navbarCollapse = document.querySelector('.navbar-collapse');
+            navbarToggler.classList.add('collapsed');
+            navbarCollapse.classList.remove('show');
+            
+        }
+    </script>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyCJT-RYir-w8IxRx6TJ92pAbcP0KV59-WA",
+          authDomain: "orderplease-fd3e1.firebaseapp.com",
+          projectId: "orderplease-fd3e1",
+          storageBucket: "orderplease-fd3e1.appspot.com",
+          messagingSenderId: "1022605540219",
+          appId: "1:1022605540219:web:e5fc6d73120e01bbb8dbde",
+          measurementId: "G-310ZBCKV2C"
+        };
+      
+        // Initialize Firebase
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+      <script>
+        function changeImage(imageUrl) {
+      document.getElementById('mainImage').src = imageUrl;
+        }
+      </script>
+</body>
+</html>
+<!--https://dhanush-r-s.web.app-->
